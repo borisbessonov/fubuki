@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Fubuki Physics</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <filter id="wiggle-filter" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="2" seed="5" result="turbulence" />
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="cursor"></div>
+
+  <div class="container">
+    <img id="bodyImage" src="fubuki.png">
+    <canvas id="physicsLayer" width="600" height="800"></canvas>
+  </div>
+
+  <a href="https://onepunchman-anime.net/">
+    <button id="btn_website" class="arrow-button">
+      <span class="button-bg"></span>
+      <span class="button-text">Visit Website</span>
+    </button>
+  </a>
+
+  <canvas id="physicsCanvas"></canvas>
+
+  <div class="controls">
+    <label>Ширина: <input type="range" id="widthControl" min="50" max="300" value="100"></label><br>
+    <label>Высота: <input type="range" id="heightControl" min="50" max="300" value="100"></label><br>
+    <label>Масштаб: <input type="range" id="scaleControl" min="0.5" max="2" step="0.1" value="1"></label>
+  </div>
+
+  <p class="title">FUBUKIFUBUKIFUBUKIFUBUKIFUBUKI</p>
+  <p class="madeby">instagram: borisbessonov_</p>
+  <p class="name_outline_bg">フブキ</p>
+
+  <p class="aboutFubuki">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEnhanced Fubuki (フブキ, Fubuki; Viz:&nbspBlizzard), also known by&nbspher hero alias Blizzard of&nbspHell (地獄のフブキ,
+    Jigoku no&nbspFubuki; Viz: Hellish Blizzard) is&nbspthe B-Class Rank 1&nbspprofessional hero of&nbspthe&nbspHero Association.</p>
+
+  <p class="aboutFubuki2">Age: 23 /
+    Abilities: Psychokinesis, Telepathy
+  </p>
+
+  <p class="aboutFubuki3">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEnhanced Endurance: During her
+    fight against Do-S, Fubuki was&nbspable to&nbspendure the&nbspfull force of&nbspthe monster's whip, which otherwise sent several
+    other heroes flying a&nbspconsiderable distance.
+  </p>
+
+  <p class="aboutFubuki4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEnhanced Fubuki is&nbspher real name.
+    The&nbsporigin of&nbspher hero name comes from her raging winds that give birth to&nbspa&nbspvisage of&nbsphell. As&nbspa&nbspresult, "Hell" was
+    added to&nbspher&nbspname.
+  </p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+  <script src="script.js"></script>
+
+  <div id="cursorImage" style="position: fixed; pointer-events: none; z-index: 9999; display: none;"></div>
+  <div class="vhs-noise"></div>
+  <audio id="vhsSound" loop>
+    <source src="vhs-noise.mp3" type="audio/mpeg">
+  </audio>
+
+
+</body>
+
+</html>
